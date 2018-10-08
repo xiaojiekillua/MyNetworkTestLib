@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MyNetworkTestLib_Example' do
+  pod 'MyNetworkTestLib', :path => '../'
+
+  target 'MyNetworkTestLib_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
