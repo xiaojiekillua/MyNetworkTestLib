@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  This a lib of http network request.
+  MyNetworkTestLib is a lib that test for http request.
                        DESC
 
   s.homepage         = 'https://github.com/xiaojiekillua/MyNetworkTestLib'
