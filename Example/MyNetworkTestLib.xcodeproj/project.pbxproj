@@ -64,9 +64,9 @@
 		955C9FEC8EA29FB88CA1A1ED /* Pods-MyNetworkTestLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNetworkTestLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyNetworkTestLib_Example/Pods-MyNetworkTestLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B695EDEBA2DD33F3022CCAC9 /* Pods-MyNetworkTestLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNetworkTestLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyNetworkTestLib_Tests/Pods-MyNetworkTestLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D34EF16FBA21854DD211911E /* Pods_MyNetworkTestLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNetworkTestLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA7A0E2A0758D05609286933 /* MyNetworkTestLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MyNetworkTestLib.podspec; path = ../MyNetworkTestLib.podspec; sourceTree = "<group>"; };
-		E1AAC6D7A19251D27138C509 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		F10B1870A576F2D3DEA7E259 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DA7A0E2A0758D05609286933 /* MyNetworkTestLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MyNetworkTestLib.podspec; path = ../MyNetworkTestLib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E1AAC6D7A19251D27138C509 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F10B1870A576F2D3DEA7E259 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,10 +301,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyNetworkTestLib_Example/Pods-MyNetworkTestLib_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/MyNetworkTestLib/MyNetworkTestLib.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MyNetworkTestLib.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +490,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyNetworkTestLib/MyNetworkTestLib-Prefix.pch";
 				INFOPLIST_FILE = "MyNetworkTestLib/MyNetworkTestLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,6 +506,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyNetworkTestLib/MyNetworkTestLib-Prefix.pch";
 				INFOPLIST_FILE = "MyNetworkTestLib/MyNetworkTestLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

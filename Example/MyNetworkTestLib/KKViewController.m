@@ -7,6 +7,7 @@
 //
 
 #import "KKViewController.h"
+#import <MyNetworkTestLib/KKBaseHttpClient.h>
 
 @interface KKViewController ()
 
@@ -17,7 +18,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    NSString *url = @"http://58.251.37.197:10165/bss/app/noauth/QueryOfferList";
+    NSDictionary *param = @{@"channelType" : @"APP",
+                            @"goodsType" : @"DISC",
+                            @"mcc" : @"US",
+                            @"mvnoCode" : @"GCGROUP",
+                            @"partnerCode" : @"UKAPP",
+                            @"perPageCount" : @"1000",
+                            @"streamNo" : @"UKAPP20180928020014125649",
+                            @"terminalType" : @"MIFI",
+                            };
+    
+    [[KKBaseHttpClient sharedClient] postRequestWithURL:url params:param withSuccess:^(KKAFTASK *task, id responseData) {
+        
+        NSError *error = nil;
+        id value = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        NSLog(@"%@",value);
+        
+    } failure:^(KKAFTASK *task, NSError *error) {
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
